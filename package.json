@@ -1,0 +1,30 @@
+{
+  "name": "next-connectips",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "20.3.1",
+    "@types/node-rsa": "^1.1.1",
+    "@types/pem": "^1.9.6",
+    "@types/react": "18.2.14",
+    "@types/react-dom": "18.2.6",
+    "autoprefixer": "10.4.14",
+    "eslint": "8.43.0",
+    "eslint-config-next": "13.4.7",
+    "nanoid": "^4.0.2",
+    "next": "13.4.7",
+    "node-rsa": "^1.1.1",
+    "pem": "^1.14.8",
+    "postcss": "8.4.24",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.1.3"
+  }
+}
