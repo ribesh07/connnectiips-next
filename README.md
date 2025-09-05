@@ -2,16 +2,6 @@ This is a [Connect IPS](https://www.connectips.com/) Core Module integration in 
 
 ## Getting Started
 
-First, clone the repository
-
-```bash
-# SSH
-git clone git@github.com:greyhere/next-connectips.git
-
-# HTTPS
-git clone https://github.com/greyhere/next-connectips.git
-```
-
 Install dependencies:
 
 ```bash
@@ -26,6 +16,7 @@ Generate a `.env.local` file resembling `.env.example` and fill it with the prov
 
 ```bash
 cp .env.example .env.local
+
 ```
 
 Add your `CREDITOR.pfx` private key file provided by Connect IPS to the `signatures` directory.
