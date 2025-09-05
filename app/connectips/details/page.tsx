@@ -28,7 +28,7 @@ export default function TransactionDetailsPage({
       {/* Fetch and display more transaction details from your database as needed */}
       <button
         onClick={ () => {
-          const result =  validateTransaction('TxmTqySp5urja6Ge6Xdr', 1000); // Replace 1000 with actual amount
+          const result =  validateTransaction(TXNID, 1000); // Replace 1000 with actual amount
           alert(`Transaction Status: ${result}`);
         }}
       >

@@ -5,16 +5,16 @@ import { NextResponse } from 'next/server';
 
 const hostnameEnv = process.env.NEXT_PUBLIC_HOSTNAME;
 const hostname = hostnameEnv ? hostnameEnv : 'http://localhost:3000';
-const USERID = process.env.CONNECTIPS_MERCHAND_USER_ID;
+// const USERID = process.env.CONNECTIPS_MERCHAND_USER_ID;
+const USERID = process.env.NEXT_PUBLIC_CONNECTIPS_APPID;
 const PASSWORD = process.env.CONNECTIPS_AUTH_PASSWORD;
 const VALADIATION_URL = process.env.CONNECTIPS_VALIDATION_API_URL;
 const MERCHANTID = process.env.NEXT_PUBLIC_CONNECTIPS_MERCHANTID;
 const APPID = process.env.NEXT_PUBLIC_CONNECTIPS_APPID;
 
 
-// const credentials = Buffer.from(`User Id: ${Mer} Password: ${pass}`).toString("base64");
-const credentials = Buffer.from(`${APPID}:${PASSWORD}`).toString("base64");
 
+const credentials = Buffer.from(`${APPID}:${PASSWORD}`).toString("base64");
 
 export async function POST(request: Request) {
   try {

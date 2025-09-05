@@ -7,7 +7,42 @@ const APPID = process.env.NEXT_PUBLIC_CONNECTIPS_APPID;
 const hostnameEnv = process.env.NEXT_PUBLIC_HOSTNAME;
 const hostname = hostnameEnv ? hostnameEnv : 'http://localhost:3000';
 
-const validateConnectIPSTransaction = async ({
+// const validateConnectIPSTransaction = async ({
+//   refId,
+//   amount,
+// }: {
+//   refId: string;
+//   amount: string | number;
+// }) => {
+//   const transactionDetails = {
+//     MERCHANTID,
+//     APPID,
+//     REFERENCEID: refId,
+//     TXNAMT: amount,
+//   };
+
+//   try {
+//     const response = await fetch(`${hostname}/connectips/validate`, {
+//       method: 'POST',
+//       body: JSON.stringify(transactionDetails),
+//       cache: 'no-cache',
+//     });
+
+//     if (!response.ok) {
+//       throw new Error('Failed to validate transaction');
+//     }
+
+//     const data =  await response.json();
+//     console.log('Validation Response:', data);
+//     return data;
+
+//   } catch (err) {
+//     console.error(err);
+//     return null;
+//   }
+// };
+
+ const validateConnectIPSTransaction = async ({
   refId,
   amount,
 }: {
@@ -24,6 +59,7 @@ const validateConnectIPSTransaction = async ({
   try {
     const response = await fetch(`${hostname}/connectips/validate`, {
       method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(transactionDetails),
       cache: 'no-cache',
     });
@@ -32,10 +68,7 @@ const validateConnectIPSTransaction = async ({
       throw new Error('Failed to validate transaction');
     }
 
-    const data =  await response.json();
-    console.log('Validation Response:', data);
-    return data;
-
+    return await response.json();
   } catch (err) {
     console.error(err);
     return null;
@@ -70,6 +103,7 @@ const SuccessPage = async ({
     );
   } else if (res.status === 'ERROR') {
     return (
+
       <div>
         <div className='mb-4'>
           <h1>Something went wrong</h1>
