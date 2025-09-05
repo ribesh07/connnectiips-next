@@ -9,6 +9,7 @@ const MERCHANTID = process.env.NEXT_PUBLIC_CONNECTIPS_MERCHANTID as string;
 const APPID = process.env.NEXT_PUBLIC_CONNECTIPS_APPID as string;
 const APPNAME = process.env.NEXT_PUBLIC_CONNECTIPS_APPNAME as string;
 const CONNECTIPS_API_URL = process.env.NEXT_PUBLIC_CONNECTIPS_API_URL as string;
+const CONNECTIPS_BASE_URL = process.env.NEXT_PUBLIC_CONNECTIPS_BASE_URL as string;
 
 type PayWithConnectIPSProps = {
   amount: number;

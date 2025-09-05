@@ -10,6 +10,7 @@ const PASSWORD = process.env.CONNECTIPS_AUTH_PASSWORD;
 const VALADIATION_URL = process.env.CONNECTIPS_VALIDATION_API_URL;
 const MERCHANTID = process.env.NEXT_PUBLIC_CONNECTIPS_MERCHANTID;
 const APPID = process.env.NEXT_PUBLIC_CONNECTIPS_APPID;
+const DETAILS_URL = process.env.NEXT_PUBLIC_CONNECTIPS_GETDETAILS_URL;
 
 
 // const credentials = Buffer.from(`User Id: ${Mer} Password: ${pass}`).toString("base64");
@@ -41,8 +42,6 @@ export async function POST(request: Request) {
         token: TOKEN,
       };
 
-    console.log('Payload:', payload);
-    console.log('Validation URL:', VALADIATION_URL);
 
     const response = await fetch(VALADIATION_URL as string, {
       method: 'POST',
